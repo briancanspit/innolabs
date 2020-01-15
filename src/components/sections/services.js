@@ -1,5 +1,11 @@
 import React from "react"
 import styled from "styled-components"
+import {BellRing} from "styled-icons/boxicons-solid/BellRing"
+import {Security} from "styled-icons/material/Security"
+import {Auto} from "styled-icons/crypto/Auto"
+import {Link} from "styled-icons/fa-solid/Link"
+import {FileInvoiceDollar} from "styled-icons/fa-solid/FileInvoiceDollar"
+import {Gift} from "styled-icons/boxicons-regular/Gift"
 
 import { Section } from "../global"
 
@@ -10,34 +16,40 @@ const Services = () => (
       <SectionTitle>Here's what we offer</SectionTitle>
       <ServicesGrid>
         <ServiceItem>
+          <NotificationsIcon size={42}/>
           <ServiceTitle>Notifications</ServiceTitle>
           <ServiceText>
             Get informed about pending bills and invoices that are due.
           </ServiceText>
         </ServiceItem>
         <ServiceItem>
+          <SecurityIcon size={42} />
           <ServiceTitle>Security</ServiceTitle>
           <ServiceText>
             We keep your data safe using the latest security protocols.
           </ServiceText>
         </ServiceItem>
         <ServiceItem>
-          <ServiceTitle>Automation</ServiceTitle>
-          <ServiceText>
-            Set up recurring payments and schedule regular transactions.
-          </ServiceText>
-        </ServiceItem>
-        <ServiceItem>
+          <IntegrateIcon size={42} />
           <ServiceTitle>Aggregation</ServiceTitle>
           <ServiceText>
             Integrate other financial providers to your account wallet.
           </ServiceText>
         </ServiceItem>
         <ServiceItem>
+          <AutomateIcon size={42} />
+          <ServiceTitle>Automation</ServiceTitle>
+          <ServiceText>
+            Set up recurring payments and schedule regular transactions.
+          </ServiceText>
+        </ServiceItem>
+        <ServiceItem>
+          <MoneyIcon size={42} />
           <ServiceTitle>Payments</ServiceTitle>
           <ServiceText>Send money to friends and family with ease.</ServiceText>
         </ServiceItem>
         <ServiceItem>
+          <GiftIcon size={42} />
           <ServiceTitle>Rewards</ServiceTitle>
           <ServiceText>
             Get bonuses and discount points every time you complete a transaction.
@@ -102,8 +114,39 @@ const ServiceTitle = styled.h4`
   letter-spacing: 0px;
   line-height: 30px;
   margin-bottom: 10px;
+  margin-top: 10px;
 `
 
 const ServiceText = styled.p`
   text-align: center;
+`
+
+const NotificationsIcon = styled(BellRing)`
+color: ${props => props.theme.color.secondary};
+margin: 0;
+`
+
+const SecurityIcon = styled(Security)`
+color: ${props => props.theme.color.secondary};
+margin: 0;
+`
+
+const AutomateIcon = styled(Auto)`
+color: ${props => props.theme.color.secondary};
+margin: 0;
+`
+
+const IntegrateIcon = styled(Link)`
+  color: ${props => props.theme.color.secondary};
+  margin: 0;
+`
+
+const MoneyIcon = styled(FileInvoiceDollar)`
+  color: ${props => props.theme.color.secondary};
+  margin: 0;
+`
+
+const GiftIcon = styled(Gift)`
+  color: ${props => props.theme.color.secondary};
+  margin: 0;
 `
