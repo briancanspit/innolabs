@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, {keyframes} from "styled-components"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 
@@ -8,7 +8,7 @@ import { Container } from "../global"
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: { eq: "product" }, name: { eq: "mockuper" }) {
+      file(sourceInstanceName: { eq: "product" }, name: { eq: "balloon" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -47,7 +47,7 @@ const Header = () => {
             </FormSubtitle>
           </HeaderTextGroup>
           <Text>
-            <StyledImage fluid={data.file.childImageSharp.fluid} />
+            <Float><StyledImage fluid={data.file.childImageSharp.fluid} /></Float>
             <br />
           </Text>
         </Flex>
@@ -66,6 +66,23 @@ const HeaderWrapper = styled.header`
   @media (max-width: ${props => props.theme.screen.md}) {
   }
 `
+
+const floating = keyframes`
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+`
+
+const Float = styled.div`
+  animation: ${floating} 2.5s linear infinite;
+`
+
 const Subtitle = styled.h5`
   font-size: 16px;
   color: ${props => props.theme.color.accent};
