@@ -9,12 +9,12 @@ const NewsLetter = () => {
   }
   return (<StyledSection id="newsletter">
     <NewsLetterContainer>
-      <NewsLetterTitle>Be the first to get updates</NewsLetterTitle>
+      <NewsLetterTitle>Keep track of our activities</NewsLetterTitle>
       <HeaderForm onSubmit={handleSubmit}>
         <HeaderInput placeholder="Your Email Address" />
         <HeaderButton>Subscribe</HeaderButton>
       </HeaderForm>
-      <Subtitle>No credit card required.</Subtitle>
+      <Subtitle>Subscribing to our newsletter ensures you receive the latest updates.</Subtitle>
     </NewsLetterContainer>
   </StyledSection>)
 }
