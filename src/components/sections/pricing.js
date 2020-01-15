@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, {keyframes} from "styled-components"
 import {CheckCircle} from "styled-icons/boxicons-solid/CheckCircle"
 import {XCircle} from "styled-icons/boxicons-solid/XCircle"
 import {Fade} from "react-reveal"
@@ -79,6 +79,18 @@ const StyledContainer = styled(Section)`
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
 `
 
+const enlarge = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+`
+
 const SectionTitle = styled.h3`
   color: ${props => props.theme.color.primary};
   display: flex;
@@ -121,6 +133,10 @@ const PricingItem = styled.div`
   border-bottom-right-radius: 5px;
   box-shadow: 1px 1px 5px #a8a8a8;
   width: 300px;
+  &:hover {
+    animation: ${enlarge} 0.5s linear;
+    cursor: pointer;
+  }
 `
 
 const PricingTitle = styled.h4`

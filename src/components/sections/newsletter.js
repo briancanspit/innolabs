@@ -9,6 +9,7 @@ const NewsLetter = () => {
     event.preventDefault()
   }
   return (<StyledSection id="newsletter">
+    <Fade duration={300} bottom><SubtitleTop>Newsletter</SubtitleTop></Fade>
     <NewsLetterContainer>
       <Fade duration={300} bottom><NewsLetterTitle>Keep track of our activities</NewsLetterTitle></Fade>
       <HeaderForm onSubmit={handleSubmit}>
@@ -26,6 +27,14 @@ const StyledSection = styled(Section)`
   background-color: ${props => props.theme.color.background.white};
   clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
   margin-top: -150px;
+`
+
+const SubtitleTop = styled.h5`
+  font-size: 16px;
+  color: ${props => props.theme.color.accent};
+  letter-spacing: 0px;
+  margin-bottom: -65px;
+  text-align: center;
 `
 
 const NewsLetterContainer = styled(Container)`
