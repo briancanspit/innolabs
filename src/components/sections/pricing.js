@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { Section } from "../global"
 
 const Pricing = () => (
-  <Section id="pricing">
+  <Section id="pricing" style={{marginTop: -80}}>
     <StyledContainer>
       <Subtitle>Pricing</Subtitle>
       <SectionTitle>Choose the best plan for you</SectionTitle>
@@ -40,7 +40,6 @@ const StyledContainer = styled(Section)`
   flex-direction: column;
   padding: 0px 0px 120px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
-  margin-top: -50px;
 `
 
 const SectionTitle = styled.h3`

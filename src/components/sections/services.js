@@ -51,15 +51,12 @@ const Services = () => (
 export default Services
 
 const StyledContainer = styled(Section)`
-  /* transform: skewY(5deg);
-  border-radius: 4px;
-  background-image: linear-gradient(to top, #fefefe 0%, #fbfbfb 100%); */
   background-color: ${props => props.theme.color.background.light};
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 80px 0px 120px;
+  padding: 40px 0px 120px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   
 `
