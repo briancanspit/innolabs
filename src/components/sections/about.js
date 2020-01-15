@@ -6,18 +6,20 @@ import { Container, Section } from "../global"
 
 const About = () => (
   <StyledSection id="about">
-    <Fade duration={300} bottom>
-    <Subtitle>About us</Subtitle>
+    <Fade duration={300} bottom><Subtitle>About us</Subtitle></Fade>
     <AboutContainer>
-      <AboutTitle>Who We Are</AboutTitle>
+      <Fade duration={300} top><AboutTitle>Who We Are</AboutTitle></Fade>
+      <Fade duration={300} bottom>
       <FeaturesGrid>
       <FeatureItem>
           <FeatureTitle>InnoLabs is a leading provider of financial services aimed at lessening the complexity of online transactions. With our users in mind, we provide flexible solutions that revolutionize money transfer.</FeatureTitle>
       </FeatureItem>
       </FeaturesGrid>
+      </Fade>
+      <Fade duration={300} top>
       <TryItButton>Check out our services</TryItButton>
+      </Fade>
     </AboutContainer>
-    </Fade>
   </StyledSection>
 )
 
