@@ -95,9 +95,11 @@ export default class Navigation extends Component {
           </Mobile>
 
           <Mobile hide>{this.getNavList({})}</Mobile>
+          <AnchorLink href="#contact" style={{textDecoration: "none"}}>
           <ActionsContainer>
             <button>Contact Us</button>
           </ActionsContainer>
+          </AnchorLink>
         </StyledContainer>
         <Mobile>
           {mobileMenuOpen && (

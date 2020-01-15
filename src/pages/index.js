@@ -7,8 +7,10 @@ import Navigation from "../components/common/navigation/navigation"
 import Header from "../components/sections/header"
 import About from "../components/sections/about"
 import Services from "../components/sections/services"
-import Footer from "../components/sections/footer"
+import Pricing from "../components/sections/pricing"
+import Contact from "../components/sections/contact"
 import NewsLetter from "../components/sections/newsletter"
+import Footer from "../components/sections/footer"
 
 const IndexPage = () => (
   <Layout>
@@ -17,6 +19,8 @@ const IndexPage = () => (
     <Header />
     <About />
     <Services />
+    <Pricing />
+    <Contact />
     <NewsLetter />
     <Footer />
   </Layout>

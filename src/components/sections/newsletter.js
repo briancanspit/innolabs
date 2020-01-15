@@ -24,6 +24,7 @@ export default NewsLetter
 const StyledSection = styled(Section)`
   background-color: ${props => props.theme.color.background.white};
   clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
+  margin-top: -150px;
 `
 
 const NewsLetterContainer = styled(Container)`
@@ -31,7 +32,7 @@ const NewsLetterContainer = styled(Container)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 80px 0 40px;
+  padding: 80px 0 0;
 `
 
 const NewsLetterTitle = styled.h3`
@@ -54,7 +55,6 @@ const HeaderForm = styled.form`
     flex-direction: column;
   }
 `
-
 
 const HeaderInput = styled.input`
   font-weight: 500;
