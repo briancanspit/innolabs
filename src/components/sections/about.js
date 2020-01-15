@@ -1,10 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import {Fade} from "react-reveal"
 
 import { Container, Section } from "../global"
 
 const About = () => (
   <StyledSection id="about">
+    <Fade duration={300} bottom>
     <Subtitle>About us</Subtitle>
     <AboutContainer>
       <AboutTitle>Who We Are</AboutTitle>
@@ -15,6 +17,7 @@ const About = () => (
       </FeaturesGrid>
       <TryItButton>Check out our services</TryItButton>
     </AboutContainer>
+    </Fade>
   </StyledSection>
 )
 

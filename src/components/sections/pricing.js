@@ -2,15 +2,21 @@ import React from "react"
 import styled from "styled-components"
 import {CheckCircle} from "styled-icons/boxicons-solid/CheckCircle"
 import {XCircle} from "styled-icons/boxicons-solid/XCircle"
+import {Fade} from "react-reveal"
 
 import { Section } from "../global"
 
 const Pricing = () => (
   <Section id="pricing" style={{marginTop: -80}}>
     <StyledContainer>
-      <Subtitle>Pricing</Subtitle>
-      <SectionTitle>Choose the best plan for you</SectionTitle>
+      <Fade duration={300} bottom>
+        <Subtitle>Pricing</Subtitle>
+      </Fade>
+      <Fade duration={300} top>
+        <SectionTitle>Choose the best plan for you</SectionTitle>
+      </Fade>
       <PricingGrid>
+        <Fade duration={300} left>
         <PricingItem>
           <PricingTitle>Free</PricingTitle>
           <PricingValue>$0.00 / month</PricingValue>
@@ -32,6 +38,8 @@ const Pricing = () => (
           </PerksHolder>
           <HeaderButton>Get Free Plan</HeaderButton>
         </PricingItem>
+        </Fade>
+        <Fade duration={300} right>
         <PricingItem>
           <PricingTitle>Pro</PricingTitle>
           <PricingValue>$9.99 / month</PricingValue>
@@ -53,6 +61,7 @@ const Pricing = () => (
           </PerksHolder>
           <HeaderButton>Get Pro Plan</HeaderButton>
         </PricingItem>
+        </Fade>
       </PricingGrid>
     </StyledContainer>
   </Section>

@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import {Fade} from "react-reveal"
 
 import { Container, Section } from "../global"
 
@@ -9,12 +10,12 @@ const NewsLetter = () => {
   }
   return (<StyledSection id="newsletter">
     <NewsLetterContainer>
-      <NewsLetterTitle>Keep track of our activities</NewsLetterTitle>
+      <Fade duration={300} bottom><NewsLetterTitle>Keep track of our activities</NewsLetterTitle></Fade>
       <HeaderForm onSubmit={handleSubmit}>
-        <HeaderInput placeholder="Your Email Address" />
-        <HeaderButton>Subscribe</HeaderButton>
+        <Fade duration={300} left><HeaderInput placeholder="Your Email Address" /></Fade>
+        <Fade duration={300} right><HeaderButton>Subscribe</HeaderButton></Fade>
       </HeaderForm>
-      <Subtitle>Subscribing to our newsletter ensures you receive the latest updates.</Subtitle>
+      <Fade duration={300} top><Subtitle>Subscribing to our newsletter ensures you receive the latest updates.</Subtitle></Fade>
     </NewsLetterContainer>
   </StyledSection>)
 }

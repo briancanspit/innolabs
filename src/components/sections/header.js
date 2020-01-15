@@ -27,7 +27,7 @@ const Header = () => {
       <Container>
         <Flex>
           <HeaderTextGroup>
-            <Subtitle>Be In Control</Subtitle>
+            <Subtitle>Be in control</Subtitle>
             <h1>
               Transfer your funds
               <br />
@@ -60,7 +60,7 @@ export default Header
 
 const HeaderWrapper = styled.header`
   background-color: ${props => props.theme.color.background.light};
-  padding: 160px 0 80px 0;
+  padding: 160px 0 200px 0;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   @media (max-width: ${props => props.theme.screen.md}) {

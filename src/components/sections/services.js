@@ -6,6 +6,7 @@ import {Auto} from "styled-icons/crypto/Auto"
 import {Link} from "styled-icons/fa-solid/Link"
 import {FileInvoiceDollar} from "styled-icons/fa-solid/FileInvoiceDollar"
 import {Gift} from "styled-icons/boxicons-regular/Gift"
+import {Fade} from "react-reveal"
 
 import { Section } from "../global"
 
@@ -15,6 +16,7 @@ const Services = () => (
       <Subtitle>Services</Subtitle>
       <SectionTitle>Here's what we offer</SectionTitle>
       <ServicesGrid>
+        <Fade duration={300} left>
         <ServiceItem>
           <NotificationsIcon size={42}/>
           <ServiceTitle>Notifications</ServiceTitle>
@@ -22,6 +24,8 @@ const Services = () => (
             Get informed about pending bills and invoices that are due.
           </ServiceText>
         </ServiceItem>
+        </Fade>
+        <Fade duration={300} right>
         <ServiceItem>
           <SecurityIcon size={42} />
           <ServiceTitle>Security</ServiceTitle>
@@ -29,6 +33,8 @@ const Services = () => (
             We keep your data safe using the latest security protocols.
           </ServiceText>
         </ServiceItem>
+        </Fade>
+        <Fade duration={300} left>
         <ServiceItem>
           <IntegrateIcon size={42} />
           <ServiceTitle>Aggregation</ServiceTitle>
@@ -36,6 +42,8 @@ const Services = () => (
             Integrate other financial providers to your account wallet.
           </ServiceText>
         </ServiceItem>
+        </Fade>
+        <Fade duration={300} right>
         <ServiceItem>
           <AutomateIcon size={42} />
           <ServiceTitle>Automation</ServiceTitle>
@@ -43,11 +51,15 @@ const Services = () => (
             Set up recurring payments and schedule regular transactions.
           </ServiceText>
         </ServiceItem>
+        </Fade>
+        <Fade duration={300} left>
         <ServiceItem>
           <MoneyIcon size={42} />
           <ServiceTitle>Payments</ServiceTitle>
           <ServiceText>Send money to friends and family with ease.</ServiceText>
         </ServiceItem>
+        </Fade>
+        <Fade duration={300} right>
         <ServiceItem>
           <GiftIcon size={42} />
           <ServiceTitle>Rewards</ServiceTitle>
@@ -55,6 +67,7 @@ const Services = () => (
             Get bonuses and discount points every time you complete a transaction.
           </ServiceText>
         </ServiceItem>
+        </Fade>
       </ServicesGrid>
     </StyledContainer>
   </Section>
