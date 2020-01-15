@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import {CheckCircle} from "styled-icons/boxicons-solid/CheckCircle"
+import {XCircle} from "styled-icons/boxicons-solid/XCircle"
 
 import { Section } from "../global"
 
@@ -10,20 +12,46 @@ const Pricing = () => (
       <SectionTitle>Choose the best plan for you</SectionTitle>
       <PricingGrid>
         <PricingItem>
-          <PricingTitle>Aggregation</PricingTitle>
-          <PricingText>
-            Integrate other financial providers to your account wallet.
-          </PricingText>
+          <PricingTitle>Free</PricingTitle>
+          <PricingValue>$0.00 / month</PricingValue>
+          <PerksHolder>
+            <CheckGreen size={22} />
+            <PricingText>24 hour support</PricingText>
+          </PerksHolder>
+          <PerksHolder>
+            <CheckGreen size={22} />
+            <PricingText>Weekly discounts</PricingText>
+          </PerksHolder>
+          <PerksHolder>
+            <CheckRed size={22} />
+            <PricingText>Link up to 2 banks</PricingText>
+          </PerksHolder>
+          <PerksHolder style={{marginBottom: 40}}>
+            <CheckRed size={22} />
+            <PricingText>$1000 monthly limit</PricingText>
+          </PerksHolder>
+          <HeaderButton>Get Free Plan</HeaderButton>
         </PricingItem>
         <PricingItem>
-          <PricingTitle>Payments</PricingTitle>
-          <PricingText>Send money to friends and family with ease.</PricingText>
-        </PricingItem>
-        <PricingItem>
-          <PricingTitle>Rewards</PricingTitle>
-          <PricingText>
-            Get bonuses and discount points every time you complete a transaction.
-          </PricingText>
+          <PricingTitle>Pro</PricingTitle>
+          <PricingValue>$9.99 / month</PricingValue>
+          <PerksHolder>
+            <CheckGreen size={22} />
+            <PricingText>24 hour support</PricingText>
+          </PerksHolder>
+          <PerksHolder>
+            <CheckGreen size={22} />
+            <PricingText>Weekly discounts</PricingText>
+          </PerksHolder>
+          <PerksHolder>
+            <CheckGreen size={22} />
+            <PricingText>Link up to 5 banks</PricingText>
+          </PerksHolder>
+          <PerksHolder style={{marginBottom: 40}}>
+            <CheckGreen size={22}/>
+            <PricingText>No monthly limit</PricingText>
+          </PerksHolder>
+          <HeaderButton>Get Pro Plan</HeaderButton>
         </PricingItem>
       </PricingGrid>
     </StyledContainer>
@@ -76,15 +104,82 @@ const PricingItem = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border: 1px solid #e6e6e6;
+  padding: 0 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 1px 1px 5px #a8a8a8;
+  width: 300px;
 `
 
 const PricingTitle = styled.h4`
   color: ${props => props.theme.color.primary};
   letter-spacing: 0px;
   line-height: 30px;
-  margin-bottom: 10px;
+  margin: 25px;
+`
+
+const PricingValue = styled.p`
+  color: #098c8c;
+  font-weight: bold;
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 35px;
+`
+
+const PerksHolder = styled.div`
+  display: flex;
+  flex-direction: row;
 `
 
 const PricingText = styled.p`
-  text-align: center;
+  
+  padding: 0 25px 0 5px;
+  margin: 10px 0px 10px 0;
+`
+
+const CheckGreen = styled(CheckCircle)`
+  color: mediumseagreen;
+  margin-top: 8px;
+`
+
+const CheckRed = styled(XCircle)`
+  color: red;
+  margin-top: 8px;
+`
+
+const HeaderButton = styled.button`
+  font-weight: 500;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 1px;
+  height: 60px;
+  display: block;
+  margin: 0;
+  text-transform: uppercase;
+  width: 300px;
+  cursor: pointer;
+  white-space: nowrap;
+  background: ${props => props.theme.color.secondary};
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0px 40px;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  outline: 0px;
+  &:hover {
+    box-shadow: rgba(110, 120, 152, 0.22) 0px 2px 10px 0px;
+  }
+  @media (max-width: ${props => props.theme.screen.md}) {
+  }
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    margin-left: 0;
+  }
 `

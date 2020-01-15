@@ -46,13 +46,6 @@ const Subtitle = styled.h5`
   text-align: center;
 `
 
-const NameDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`
-
 const HeaderForm = styled.form`
   display: flex;
   flex-direction: column;
