@@ -176,6 +176,7 @@ const HeaderButton = styled.button`
   }
   @media (max-width: ${props => props.theme.screen.sm}) {
     margin-left: 0;
+    margin-bottom: 10px;
   }
 `
 const Text = styled.div`

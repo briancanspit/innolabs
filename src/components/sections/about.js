@@ -105,5 +105,10 @@ const FeatureTitle = styled.h4`
   color: ${props => props.theme.color.primary};
   letter-spacing: 0px;
   line-height: 50px;
+    color: #333;
   margin-bottom: 10px;
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    padding: 0;
+    line-height: 40px;
+  }
 `

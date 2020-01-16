@@ -97,6 +97,10 @@ const SectionTitle = styled.h3`
   justify-content: center;
   margin: 0 auto 40px;
   text-align: center;
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
 `
 
 const Subtitle = styled.h5`
@@ -116,7 +120,7 @@ const PricingGrid = styled.div`
   grid-row-gap: 35px;
   @media (max-width: ${props => props.theme.screen.sm}) {
     grid-template-columns: 1fr;
-    padding: 0 64px;
+    padding: 0 10vw;
   }
 `
 
@@ -136,6 +140,9 @@ const PricingItem = styled.div`
   &:hover {
     animation: ${enlarge} 0.5s linear;
     cursor: pointer;
+  }
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    width: 250px;
   }
 `
 
@@ -206,5 +213,6 @@ const HeaderButton = styled.button`
   }
   @media (max-width: ${props => props.theme.screen.sm}) {
     margin-left: 0;
+    width: 250px;
   }
 `

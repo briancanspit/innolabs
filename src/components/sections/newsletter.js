@@ -27,6 +27,9 @@ const StyledSection = styled(Section)`
   background-color: ${props => props.theme.color.background.white};
   clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
   margin-top: -150px;
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    margin-top: -150px;
+  }
 `
 
 const SubtitleTop = styled.h5`
@@ -43,6 +46,10 @@ const NewsLetterContainer = styled(Container)`
   align-items: center;
   flex-direction: column;
   padding: 80px 0 0;
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    padding: 80px 0 0;
+    margin-top: 0px;
+  }
 `
 
 const NewsLetterTitle = styled.h3`
@@ -55,6 +62,9 @@ const Subtitle = styled.span`
   padding-top: 16px;
   font-size: 14px;
   color: ${props => props.theme.color.primary};
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    display: none;
+  }
 `
 
 const HeaderForm = styled.form`

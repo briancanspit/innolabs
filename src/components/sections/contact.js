@@ -53,6 +53,7 @@ const HeaderForm = styled.form`
   width: 400px;
   @media (max-width: ${props => props.theme.screen.sm}) {
     flex-direction: column;
+    width: 80vw;
   }
 `
 
