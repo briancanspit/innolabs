@@ -133,18 +133,6 @@ const ErrorPageForm = styled.form`
   }
 `
 
-const FormSubtitle = styled.span`
-  ${props => props.theme.font_size.xxsmall}
-`
-
-const FormSubtitleLink = styled(Link)`
-  color: ${props => props.theme.color.secondary};
-  padding-bottom: 1px;
-  margin-left: 8px;
-  text-decoration: none;
-  border-bottom: 1px solid ${props => props.theme.color.secondary};
-`
-
 const ErrorButtonWrapper = styled.a`
   text-decoration: none;
 `
