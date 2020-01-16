@@ -1,19 +1,22 @@
 import React from "react"
 import styled from "styled-components"
+import {Fade} from "react-reveal"
 
 import { Section } from "../global"
 
 const Contact = () => (
   <Section id="contact" style={{marginTop: -150}}>
     <StyledContainer>
-      <Subtitle>Contact Us</Subtitle>
-      <SectionTitle>We'd love to hear from you</SectionTitle>
+      <Fade duration={300} bottom><Subtitle>Contact Us</Subtitle></Fade>
+      <Fade duration={300} top><SectionTitle>We'd love to hear from you</SectionTitle></Fade>
+      <Fade duration={800} clear>
       <HeaderForm>
             <HeaderInput placeholder="Full name" />
             <HeaderInput placeholder="Email address" />
             <TextAreaInput placeholder="Your message" />
             <HeaderButton>Send Message</HeaderButton>
         </HeaderForm>
+      </Fade>
     </StyledContainer>
   </Section>
 )
