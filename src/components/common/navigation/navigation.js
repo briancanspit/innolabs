@@ -15,7 +15,7 @@ import {
   ActionsContainer,
 } from "./style"
 
-const NAV_ITEMS = [ "About","Services", "Pricing", "Newsletter"]
+const NAV_ITEMS = [ "About","Services", "Pricing", "Newsletter", ""]
 
 export default class Navigation extends Component {
   state = {
@@ -84,7 +84,7 @@ export default class Navigation extends Component {
           <Mobile>
             <button
               onClick={this.toggleMobileMenu}
-              style={{ color: "black", background: "none" }}
+              style={{ color: "black", background: "none", position: "absolute", right: 20, top: 25 }}
             >
               {this.state.mobileMenuOpen ? (
                 <X size={24} alt="close menu" />
