@@ -97,6 +97,9 @@ const SectionTitle = styled.h3`
   justify-content: center;
   margin: 0 auto 40px;
   text-align: center;
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    padding: 0 30px;
+  }
 `
 
 const Subtitle = styled.h5`

@@ -98,8 +98,7 @@ const SectionTitle = styled.h3`
   margin: 0 auto 40px;
   text-align: center;
   @media (max-width: ${props => props.theme.screen.sm}) {
-    padding-left: 10vw;
-    padding-right: 10vw;
+    padding: 0 70px;
   }
 `
 
