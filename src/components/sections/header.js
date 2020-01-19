@@ -8,7 +8,7 @@ import { Container } from "../global"
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: { eq: "product" }, name: { eq: "balloon" }) {
+      file(sourceInstanceName: { eq: "product" }, name: { eq: "credit_card" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -47,7 +47,7 @@ const Header = () => {
             </FormSubtitle>
           </HeaderTextGroup>
           <Text>
-            <Float><StyledImage fluid={data.file.childImageSharp.fluid} /></Float>
+            {data.file.childImageSharp !== null ? <Float><StyledImage fluid={data.file.childImageSharp.fluid}/></Float>:<span></span>}
             <br />
           </Text>
         </Flex>
@@ -72,7 +72,7 @@ const floating = keyframes`
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(10px);
+    transform: translateY(6px);
   }
   100%{
     transform: translateY(0px);
@@ -80,7 +80,7 @@ const floating = keyframes`
 `
 
 const Float = styled.div`
-  animation: ${floating} 2.5s linear infinite;
+  animation: ${floating} 3.5s linear infinite;
 `
 
 const Subtitle = styled.h5`
@@ -188,6 +188,7 @@ const Text = styled.div`
 `
 
 const StyledImage = styled(Img)`
+  margin-top: -40px;
   width: 500px;
   @media (max-width: ${props => props.theme.screen.md}) {
     width: 400px;
