@@ -1,66 +1,161 @@
 import React from "react"
-import styled from "styled-components"
+import styled, {keyframes} from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import {Fade} from "react-reveal"
 
-import { Container, Section } from "../global"
+import { Container } from "../global"
 
-const About = () => (
-  <StyledSection id="about">
-    <Fade duration={300} bottom><Subtitle>About us</Subtitle></Fade>
-    <AboutContainer>
-      <Fade duration={300} top><AboutTitle>Who We Are</AboutTitle></Fade>
-      <Fade duration={300} bottom>
-      <FeaturesGrid>
-      <FeatureItem>
-          <FeatureTitle>InnoLabs is a leading provider of financial services aimed at lessening the complexity of online transactions. With our users in mind, we provide flexible solutions that revolutionize money transfer.</FeatureTitle>
-      </FeatureItem>
-      </FeaturesGrid>
-      </Fade>
-      <Fade duration={300} top>
-      <TryItButton>Check out our services</TryItButton>
-      </Fade>
-    </AboutContainer>
-  </StyledSection>
-)
+const About = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(sourceInstanceName: { eq: "product" }, name: { eq: "dream" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  `)
+
+  const handleSubmit = event => {
+    event.preventDefault()
+  }
+
+  return (
+    <HeaderWrapper id="about">
+      <Container>
+        <Flex>
+          <Fade duration={300} left>
+          <Text>
+            {data.file.childImageSharp !== null ? <Float><StyledImage fluid={data.file.childImageSharp.fluid}/></Float>:<span></span>}
+            <br />
+          </Text>
+          </Fade>
+          
+          <HeaderTextGroup>
+            <Subtitle><Fade duration={300} bottom>
+              About us
+            </Fade></Subtitle>
+            <Fade duration={300} top>
+            <h1>
+              Turning your dreams
+              <br />
+              into reality
+            </h1>
+            </Fade>
+            <Fade duration={500} clear>
+            <h2>
+              We are a dedicated team of professionals distributed across Africa
+              with the sole intent of easening the money sending process.
+            </h2>
+            </Fade>
+            <Fade duration={300} top>
+            <HeaderForm onSubmit={handleSubmit}>
+              <HeaderButton>Read more</HeaderButton>
+            </HeaderForm>
+            </Fade>
+          </HeaderTextGroup>
+          
+        </Flex>
+      </Container>
+    </HeaderWrapper>
+  )
+}
 
 export default About
 
-const StyledSection = styled(Section)`
+const HeaderWrapper = styled.header`
   background-color: ${props => props.theme.color.background.white};
+  padding: 200px 0 50px 0;
+  position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
-  padding-top: 120px;
+  @media (max-width: ${props => props.theme.screen.md}) {
+  }
+`
+
+const floating = keyframes`
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+`
+
+const Float = styled.div`
+  animation: ${floating} 3.5s linear infinite;
 `
 
 const Subtitle = styled.h5`
   font-size: 16px;
   color: ${props => props.theme.color.accent};
   letter-spacing: 0px;
-  margin-bottom: -65px;
-  text-align: center;
+  margin-bottom: 16px;
+  margin-top: -35px;
 `
 
-const AboutContainer = styled(Container)`
+const HeaderTextGroup = styled.div`
+  margin: 0 0 0 8vw;
+
+  > div {
+    width: 120%;
+    margin-bottom: -4.5%;
+
+    @media (max-width: ${props => props.theme.screen.md}) {
+      margin: 0 16px;
+    }
+  }
+
+  h1 {
+    margin: 0 0 24px;
+    color: ${props => props.theme.color.primary};
+  }
+
+  h2 {
+    margin-bottom: 24px;
+    ${props => props.theme.font_size.regular}
+    padding-right: 10px;
+  }
+
+  p {
+    margin-bottom: 48px;
+  }
+`
+
+const Flex = styled.div`
+  display: grid;
+  justify-content: space-between;
+  align-content: center;
+  grid-template-columns: 1fr 2fr;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    grid-template-columns: 1fr;
+    grid-gap: 64px;
+  }
+`
+
+const HeaderForm = styled.form`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 80px 0 40px;
+  flex-direction: row;
+  padding-bottom: 16px;
+
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    flex-direction: column;
+  }
 `
 
-const AboutTitle = styled.h3`
-  margin: 0 auto 32px;
-  text-align: center;
-`
-
-const TryItButton = styled.button`
+const HeaderButton = styled.button`
   font-weight: 500;
   font-size: 14px;
   color: white;
   letter-spacing: 1px;
   height: 60px;
   display: block;
-  margin-left: 8px;
-  margin-top: 60px;
+  margin-left: 0px;
   text-transform: uppercase;
   cursor: pointer;
   white-space: nowrap;
@@ -79,36 +174,25 @@ const TryItButton = styled.button`
   }
   @media (max-width: ${props => props.theme.screen.sm}) {
     margin-left: 0;
+    margin-bottom: 10px;
+  }
+`
+const Text = styled.div`
+  justify-self: end;
+  align-self: center;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    justify-self: center;
   }
 `
 
-const FeaturesGrid = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 100px;
-  text-align: center;
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    grid-template-columns: 1fr;
-    padding: 0 64px;
+const StyledImage = styled(Img)`
+  margin-top: -40px;
+  width: 500px;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    width: 400px;
   }
-`
-
-const FeatureItem = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`
-
-const FeatureTitle = styled.h4`
-  color: ${props => props.theme.color.primary};
-  letter-spacing: 0px;
-  line-height: 50px;
-    color: #333;
-  margin-bottom: 10px;
   @media (max-width: ${props => props.theme.screen.sm}) {
-    padding: 0;
-    line-height: 40px;
+    width: 300px;
+    display: none;
   }
 `
