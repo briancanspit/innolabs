@@ -40,7 +40,7 @@ const About = () => {
             </Fade></Subtitle>
             <Fade duration={300} top>
             <h1>
-              Turning your dreams
+              Turning dreams
               <br />
               into reality
             </h1>
@@ -72,6 +72,7 @@ const HeaderWrapper = styled.header`
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   @media (max-width: ${props => props.theme.screen.md}) {
+    padding: 200px 0 50px 0;
   }
 `
 
@@ -107,13 +108,16 @@ const HeaderTextGroup = styled.div`
     margin-bottom: -4.5%;
 
     @media (max-width: ${props => props.theme.screen.md}) {
-      margin: 0 16px;
+      margin: 0;
     }
   }
 
   h1 {
     margin: 0 0 24px;
     color: ${props => props.theme.color.primary};
+    @media (max-width: ${props => props.theme.screen.md}) {
+      font-size: 34px;
+    }
   }
 
   h2 {
@@ -144,7 +148,6 @@ const HeaderForm = styled.form`
   padding-bottom: 16px;
 
   @media (max-width: ${props => props.theme.screen.sm}) {
-    flex-direction: column;
   }
 `
 
