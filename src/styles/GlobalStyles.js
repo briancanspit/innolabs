@@ -10,11 +10,12 @@ const GlobalStyles = createGlobalStyle`
   html {
     ${"" /* change this if implementing light/dark mode functionality */}
     color: ${props => props.theme.color.primary};
-
+    overflow-x: hidden;
   }
   
   body {
     font-family: ${props => props.theme.font.primary};
+    overflow-x: hidden;
   }
 
   
