@@ -106,6 +106,9 @@ const HeaderTextGroup = styled.div`
   h1 {
     margin: 0 0 24px;
     color: ${props => props.theme.color.primary};
+    @media (max-width: ${props => props.theme.screen.md}) {
+      font-size: 34px;
+    }
   }
 
   h2 {
