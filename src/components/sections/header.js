@@ -64,6 +64,7 @@ const HeaderWrapper = styled.header`
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   @media (max-width: ${props => props.theme.screen.md}) {
+    padding: 125px 0 70px 0;
   }
 `
 
