@@ -36,24 +36,6 @@ const Services = () => (
         </Fade>
         <Fade duration={300} left>
         <ServiceItem>
-          <IntegrateIcon size={42} />
-          <ServiceTitle>Aggregation</ServiceTitle>
-          <ServiceText>
-            Integrate other financial providers to your account wallet.
-          </ServiceText>
-        </ServiceItem>
-        </Fade>
-        <Fade duration={300} right>
-        <ServiceItem>
-          <AutomateIcon size={42} />
-          <ServiceTitle>Automation</ServiceTitle>
-          <ServiceText>
-            Set up recurring payments and schedule regular transactions.
-          </ServiceText>
-        </ServiceItem>
-        </Fade>
-        <Fade duration={300} left>
-        <ServiceItem>
           <MoneyIcon size={42} />
           <ServiceTitle>Payments</ServiceTitle>
           <ServiceText>Send money to friends and family with ease.</ServiceText>
@@ -81,7 +63,7 @@ const StyledContainer = styled(Section)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 40px 0px 120px;
+  padding: 30px 0px 140px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   
 `
@@ -135,31 +117,21 @@ const ServiceText = styled.p`
 `
 
 const NotificationsIcon = styled(BellRing)`
-color: ${props => props.theme.color.secondary};
+color: #333;
 margin: 0;
 `
 
 const SecurityIcon = styled(Security)`
-color: ${props => props.theme.color.secondary};
+color: #333;
 margin: 0;
-`
-
-const AutomateIcon = styled(Auto)`
-color: ${props => props.theme.color.secondary};
-margin: 0;
-`
-
-const IntegrateIcon = styled(Link)`
-  color: ${props => props.theme.color.secondary};
-  margin: 0;
 `
 
 const MoneyIcon = styled(FileInvoiceDollar)`
-  color: ${props => props.theme.color.secondary};
+  color: #333;
   margin: 0;
 `
 
 const GiftIcon = styled(Gift)`
-  color: ${props => props.theme.color.secondary};
+  color: #333;
   margin: 0;
 `

@@ -68,7 +68,7 @@ export default About
 
 const HeaderWrapper = styled.header`
   background-color: ${props => props.theme.color.background.white};
-  padding: 200px 0 50px 0;
+  padding: 225px 0 50px 0;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   @media (max-width: ${props => props.theme.screen.md}) {
