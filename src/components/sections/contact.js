@@ -9,7 +9,7 @@ import { Container } from "../global"
 const Contact = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: { eq: "product" }, name: { eq: "message" }) {
+      file(sourceInstanceName: { eq: "product" }, name: { eq: "skyrocket" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -176,7 +176,7 @@ const HeaderInput = styled.input`
   margin: 5px 0;
   width: 100%;
   text-align: left;
-  height: 60px;
+  height: 50px;
   border-width: 1px;
   border-style: solid;
   border-color: ${props => props.theme.color.secondary};
