@@ -135,7 +135,7 @@ const PricingItem = styled.div`
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  box-shadow: 1px 1px 5px #a8a8a8;
+  box-shadow: 1px 1px 15px #f3f3f3;
   width: 300px;
   &:hover {
     animation: ${enlarge} 0.5s linear;
