@@ -28,7 +28,6 @@ const StyledSection = styled(Section)`
   clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
   margin-top: -150px;
   @media (max-width: ${props => props.theme.screen.sm}) {
-    margin-top: -150px;
   }
 `
 
@@ -38,6 +37,9 @@ const SubtitleTop = styled.h5`
   letter-spacing: 0px;
   margin-bottom: -65px;
   text-align: center;
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    padding-top: 80px;
+  }
 `
 
 const NewsLetterContainer = styled(Container)`
@@ -55,6 +57,9 @@ const NewsLetterContainer = styled(Container)`
 const NewsLetterTitle = styled.h3`
   margin: 0 auto 32px;
   text-align: center;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    padding: 0 70px;
+  }
 `
 
 const Subtitle = styled.span`
@@ -125,8 +130,10 @@ const HeaderButton = styled.button`
     box-shadow: rgba(110, 120, 152, 0.22) 0px 2px 10px 0px;
   }
   @media (max-width: ${props => props.theme.screen.md}) {
+    width: 100%;
   }
   @media (max-width: ${props => props.theme.screen.sm}) {
     margin-left: 0;
+    width: 100%;
   }
 `
