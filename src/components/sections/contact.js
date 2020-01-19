@@ -121,6 +121,10 @@ const Flex = styled.div`
     grid-template-columns: 1fr;
     grid-gap: 64px;
   }
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    display: flex;
+    justify-content: center;
+  }
 `
 
 const Label = styled.label`
