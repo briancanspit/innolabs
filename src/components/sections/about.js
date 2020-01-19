@@ -129,6 +129,9 @@ const HeaderTextGroup = styled.div`
   p {
     margin-bottom: 48px;
   }
+  @media (max-width: ${props => props.theme.screen.md}) {
+    
+  }
 `
 
 const Flex = styled.div`
