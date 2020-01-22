@@ -47,8 +47,8 @@ const About = () => {
             </Fade>
             <Fade duration={500} clear>
             <h2>
-              We are a dedicated team of professionals distributed across Africa
-              with the sole intent of easening the money sending process.
+              We are a professional team providing a 360 degree solution that lets
+              you accept payments from mobile money, debit/credit cards, bank transfer and cash deposit.
             </h2>
             </Fade>
             <Fade duration={300} top>

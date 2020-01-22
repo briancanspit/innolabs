@@ -63,8 +63,8 @@ const Contact = () => {
 export default Contact
 
 const HeaderWrapper = styled.header`
-  background-color: ${props => props.theme.color.background.light};
-  padding: 225px 0 250px 0;
+  background-color: ${props => props.theme.color.background.white};
+  padding: 220px 0 250px 0;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   @media (max-width: ${props => props.theme.screen.md}) {

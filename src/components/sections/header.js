@@ -29,17 +29,17 @@ const Header = () => {
           <HeaderTextGroup>
             <Subtitle>Be in control</Subtitle>
             <h1>
-              Transfer your funds
+              Get paid from
               <br />
-              without a hassle
+              multiple channels
             </h1>
             <h2>
-              We understand how frustrating sending money can be.
+              We understand how frustrating getting paid can be.<br />
               That's why we make it easier and more secure.
             </h2>
             <HeaderForm onSubmit={handleSubmit}>
-              <HeaderButton>Learn More</HeaderButton>
-              <HeaderButton>Create Account</HeaderButton>
+              <HeaderButtonOne>Create Account</HeaderButtonOne>
+              <HeaderButtonTwo>Learn More</HeaderButtonTwo>
             </HeaderForm>
             <FormSubtitle>
               Already have an account?{" "}
@@ -154,7 +154,7 @@ const FormSubtitleLink = styled(Link)`
   border-bottom: 1px solid ${props => props.theme.color.secondary};
 `
 
-const HeaderButton = styled.button`
+const HeaderButtonOne = styled.button`
   font-weight: 500;
   font-size: 14px;
   color: white;
@@ -183,6 +183,40 @@ const HeaderButton = styled.button`
     margin-bottom: 10px;
   }
 `
+
+const HeaderButtonTwo = styled.button`
+  font-weight: 500;
+  font-size: 14px;
+  color: ${props => props.theme.color.secondary};
+  font-weight: bold;
+  letter-spacing: 1px;
+  height: 60px;
+  display: block;
+  margin-left: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  background: transparent;
+  border-radius: 4px;
+  padding: 0px 40px;
+  border: 1.5px solid ${props => props.theme.color.secondary};
+  border-image: initial;
+  outline: 0px;
+  &:hover {
+    box-shadow: rgba(110, 120, 152, 0.22) 0px 2px 10px 0px;
+    background-color: ${props => props.theme.color.secondary};
+    border-style: initial;
+    color: #fff;
+    font-weight: 400;
+  }
+  @media (max-width: ${props => props.theme.screen.md}) {
+  }
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+`
+
 const Text = styled.div`
   justify-self: end;
   align-self: center;

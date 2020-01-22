@@ -43,9 +43,9 @@ const Footer = () => (
 )
 
 const FooterWrapper = styled.footer`
-  background-color: ${props => props.theme.color.background.light};
+  background-color: ${props => props.theme.color.background.white};
   margin: 80px 0 0;
-  padding: 50px 0 80px;
+  padding: 0px 0 60px;
 `
 
 const Logo = styled.div`

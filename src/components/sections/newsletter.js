@@ -24,7 +24,7 @@ const NewsLetter = () => {
 export default NewsLetter
 
 const StyledSection = styled(Section)`
-  background-color: ${props => props.theme.color.background.white};
+  background-color: ${props => props.theme.color.background.light};
   clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
   margin-top: -150px;
   @media (max-width: ${props => props.theme.screen.sm}) {
