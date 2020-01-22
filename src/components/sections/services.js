@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import {BellRing} from "styled-icons/boxicons-solid/BellRing"
+import {Running} from "styled-icons/fa-solid/Running"
 import {Security} from "styled-icons/material/Security"
-import {FileInvoiceDollar} from "styled-icons/fa-solid/FileInvoiceDollar"
+import {CreditCard} from "styled-icons/icomoon/CreditCard"
 import {Gift} from "styled-icons/boxicons-regular/Gift"
 import {Fade} from "react-reveal"
 
@@ -16,27 +16,27 @@ const Services = () => (
       <ServicesGrid>
         <Fade duration={300} left>
         <ServiceItem>
-          <NotificationsIcon size={42}/>
-          <ServiceTitle>Notifications</ServiceTitle>
+          <RunIcon size={42}/>
+          <ServiceTitle>Swiftness</ServiceTitle>
           <ServiceText>
-            Get informed about pending bills and invoices that are due.
+            Transact instantly and get your generated receipts sent to you on the fly.
           </ServiceText>
         </ServiceItem>
         </Fade>
         <Fade duration={300} right>
         <ServiceItem>
           <SecurityIcon size={42} />
-          <ServiceTitle>Security</ServiceTitle>
+          <ServiceTitle>Safety</ServiceTitle>
           <ServiceText>
-            We keep your data safe using the latest security protocols.
+            Your transactions adhere to the latest protocols for maximum safety.
           </ServiceText>
         </ServiceItem>
         </Fade>
         <Fade duration={300} left>
         <ServiceItem>
-          <MoneyIcon size={42} />
-          <ServiceTitle>Payments</ServiceTitle>
-          <ServiceText>Send money to friends and family with ease.</ServiceText>
+          <CreditCardIcon size={42} />
+          <ServiceTitle>Variety</ServiceTitle>
+          <ServiceText>Integrate different payment methods for quick transactions.</ServiceText>
         </ServiceItem>
         </Fade>
         <Fade duration={300} right>
@@ -114,7 +114,7 @@ const ServiceText = styled.p`
   text-align: center;
 `
 
-const NotificationsIcon = styled(BellRing)`
+const RunIcon = styled(Running)`
 color: #333;
 margin: 0;
 `
@@ -124,7 +124,7 @@ color: #333;
 margin: 0;
 `
 
-const MoneyIcon = styled(FileInvoiceDollar)`
+const CreditCardIcon = styled(CreditCard)`
   color: #333;
   margin: 0;
 `
