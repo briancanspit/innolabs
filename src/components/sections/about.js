@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { Fade } from "react-reveal"
 import AliceCarousel from "react-alice-carousel"
-import "react-alice-carousel/lib/alice-carousel.css"
+import "./../../styles/aliceCarouselOverride.css"
 
 const About = () => {
   const data = useStaticQuery(graphql`
