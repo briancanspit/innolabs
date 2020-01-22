@@ -1,15 +1,29 @@
 import React from "react"
-import styled, {keyframes} from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import {Fade} from "react-reveal"
-
-import { Container } from "../global"
+import { Fade } from "react-reveal"
+import AliceCarousel from "react-alice-carousel"
+import "react-alice-carousel/lib/alice-carousel.css"
 
 const About = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: { eq: "product" }, name: { eq: "dream" }) {
+      image1: file(sourceInstanceName: { eq: "product" }, name: { eq: "dream" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      image2: file(sourceInstanceName: { eq: "product" }, name: { eq: "confirmed" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      image3: file(sourceInstanceName: { eq: "product" }, name: { eq: "card" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -19,47 +33,131 @@ const About = () => {
     }
   `)
 
-  const handleSubmit = event => {
-    event.preventDefault()
-  }
-
   return (
     <HeaderWrapper id="about">
-      <Container>
-        <Flex>
-          <Fade duration={300} left>
-          <Text>
-            {data.file.childImageSharp !== null ? <Float><StyledImage fluid={data.file.childImageSharp.fluid}/></Float>:<span></span>}
-            <br />
-          </Text>
-          </Fade>
-          
-          <HeaderTextGroup>
-            <Subtitle><Fade duration={300} bottom>
-              About us
-            </Fade></Subtitle>
-            <Fade duration={300} top>
-            <h1>
-              Turning dreams
-              <br />
-              into reality
-            </h1>
+      <AliceCarousel
+        autoplay={true}
+        autoPlayInterval={200}
+        fadeOutAnimation={false}
+        buttonsDisabled={false}
+        dotsDisabled={true}
+        stopAutoPlayOnHover={false}
+        mouseTrackingEnabled
+      >
+        <Container>
+          <Flex>
+            <Fade duration={300} left>
+              <Text>
+                {data.image1.childImageSharp !== null ? (
+                  <Float>
+                    <StyledImage1 fluid={data.image1.childImageSharp.fluid} />
+                  </Float>
+                ) : (
+                  <span></span>
+                )}
+                <br />
+              </Text>
             </Fade>
-            <Fade duration={500} clear>
-            <h2>
-              We are a professional team providing a 360 degree solution that lets
-              you accept payments from mobile money, debit/credit cards, bank transfer and cash deposit.
-            </h2>
+
+            <HeaderTextGroup>
+              <Subtitle>
+                <Fade duration={300} bottom>
+                  Who we are
+                </Fade>
+              </Subtitle>
+              <Fade duration={300} top>
+                <h1>
+                  Turning dreams
+                  <br />
+                  into reality
+                </h1>
+              </Fade>
+              <Fade duration={500} clear>
+                <h2>
+                  We are a professional team based in Kenya dedicated to bettering
+                  payment processing to easen the complexity of transactions.
+                </h2>
+              </Fade>
+            </HeaderTextGroup>
+          </Flex>
+        </Container>
+        <Container>
+          <Flex>
+            <Fade duration={300} left>
+              <Text>
+                {data.image2.childImageSharp !== null ? (
+                  <Float>
+                    <StyledImage2 fluid={data.image2.childImageSharp.fluid} />
+                  </Float>
+                ) : (
+                  <span></span>
+                )}
+                <br />
+              </Text>
             </Fade>
-            <Fade duration={300} top>
-            <HeaderForm onSubmit={handleSubmit}>
-              <HeaderButton>Read more</HeaderButton>
-            </HeaderForm>
+
+            <HeaderTextGroup>
+              <Subtitle>
+                <Fade duration={300} bottom>
+                  What we do
+                </Fade>
+              </Subtitle>
+              <Fade duration={300} top>
+                <h1>
+                  Providing multiple
+                  <br />
+                  solutions
+                </h1>
+              </Fade>
+              <Fade duration={500} clear>
+                <h2>
+                  Our 360 degree solution accommodates mobile money, debit/credit
+                  cards and cash deposits, <br />all in a few clicks.
+                </h2>
+              </Fade>
+              
+            </HeaderTextGroup>
+          </Flex>
+        </Container>
+        <Container>
+          <Flex>
+            <Fade duration={300} left>
+              <Text>
+                {data.image3.childImageSharp !== null ? (
+                  <Float>
+                    <StyledImage3 fluid={data.image3.childImageSharp.fluid} />
+                  </Float>
+                ) : (
+                  <span></span>
+                )}
+                <br />
+              </Text>
             </Fade>
-          </HeaderTextGroup>
-          
-        </Flex>
-      </Container>
+
+            <HeaderTextGroup>
+              <Subtitle>
+                <Fade duration={300} bottom>
+                  Why choose us
+                </Fade>
+              </Subtitle>
+              <Fade duration={300} top>
+                <h1>
+                  Experience amazing
+                  <br />
+                  products
+                </h1>
+              </Fade>
+              <Fade duration={500} clear>
+                <h2>
+                  We care about making payment processing easier, faster and more secure.
+                  That's why we provide amazing service you can depend on.
+                </h2>
+              </Fade>
+              
+            </HeaderTextGroup>
+          </Flex>
+        </Container>
+      </AliceCarousel>
     </HeaderWrapper>
   )
 }
@@ -68,12 +166,42 @@ export default About
 
 const HeaderWrapper = styled.header`
   background-color: ${props => props.theme.color.background.white};
-  padding: 225px 0 50px 0;
+  padding: 95px 0 50px 0;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   @media (max-width: ${props => props.theme.screen.sm}) {
     padding: 100px 0 50px 0;
   }
+`
+
+const Container = styled.div`
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 70px;
+  padding: 0 16px;
+
+  @media (min-width: ${props => props.theme.screen.xs}) {
+    max-width: 540px;
+  }
+
+  @media (min-width: ${props => props.theme.screen.sm}) {
+    max-width: 720px;
+  }
+
+  @media (min-width: ${props => props.theme.screen.md}) {
+    max-width: 960px;
+  }
+
+  @media (min-width: ${props => props.theme.screen.lg}) {
+    max-width: 1200px;
+  }
+
+  ${props =>
+    props.fluid &&
+    `
+    max-width: 1200px !important;
+  `};
 `
 
 const floating = keyframes`
@@ -101,8 +229,9 @@ const Subtitle = styled.h5`
 `
 
 const HeaderTextGroup = styled.div`
-  margin: 0 0 0 8vw;
-
+  margin: 50px 0 0 8vw;
+  text-align: left;
+  padding: 0 70px 0 0px;
   > div {
     width: 120%;
     margin-bottom: -4.5%;
@@ -115,6 +244,7 @@ const HeaderTextGroup = styled.div`
   h1 {
     margin: 0 0 24px;
     color: ${props => props.theme.color.primary};
+    
     @media (max-width: ${props => props.theme.screen.md}) {
       font-size: 34px;
     }
@@ -130,7 +260,6 @@ const HeaderTextGroup = styled.div`
     margin-bottom: 48px;
   }
   @media (max-width: ${props => props.theme.screen.md}) {
-    
   }
 `
 
@@ -145,55 +274,42 @@ const Flex = styled.div`
   }
 `
 
-const HeaderForm = styled.form`
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 16px;
-
-  @media (max-width: ${props => props.theme.screen.sm}) {
-  }
-`
-
-const HeaderButton = styled.button`
-  font-weight: 500;
-  font-size: 14px;
-  color: white;
-  letter-spacing: 1px;
-  height: 60px;
-  display: block;
-  margin-left: 0px;
-  text-transform: uppercase;
-  cursor: pointer;
-  white-space: nowrap;
-  background: ${props => props.theme.color.secondary};
-  border-radius: 4px;
-  padding: 0px 40px;
-  border-width: 0px;
-  border-style: initial;
-  border-color: initial;
-  border-image: initial;
-  outline: 0px;
-  &:hover {
-    box-shadow: rgba(110, 120, 152, 0.22) 0px 2px 10px 0px;
-  }
-  @media (max-width: ${props => props.theme.screen.md}) {
-  }
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    margin-left: 0;
-    margin-bottom: 10px;
-  }
-`
 const Text = styled.div`
   justify-self: end;
   align-self: center;
+  padding-left: 50px;
   @media (max-width: ${props => props.theme.screen.md}) {
     justify-self: center;
   }
 `
 
-const StyledImage = styled(Img)`
-  margin-top: -40px;
-  width: 500px;
+const StyledImage1 = styled(Img)`
+  margin-top: -10px;
+  width: 455px;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    width: 400px;
+  }
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    width: 300px;
+    display: none;
+  }
+`
+
+const StyledImage2 = styled(Img)`
+  margin-top: -30px;
+  width: 400px;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    width: 400px;
+  }
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    width: 300px;
+    display: none;
+  }
+`
+
+const StyledImage3 = styled(Img)`
+  margin-top: -20px;
+  width: 405px;
   @media (max-width: ${props => props.theme.screen.md}) {
     width: 400px;
   }
