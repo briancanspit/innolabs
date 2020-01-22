@@ -111,8 +111,8 @@ const About = () => {
               </Fade>
               <Fade duration={500} clear>
                 <h2>
-                  Our 360 degree solution accommodates mobile money, debit/credit
-                  cards and cash deposits, <br />all in a few clicks.
+                  Our 360 degree solution allows for cash, mobile money and debit/credit
+                  card transactions.
                 </h2>
               </Fade>
               
@@ -235,7 +235,7 @@ const HeaderTextGroup = styled.div`
   > div {
     width: 120%;
     margin-bottom: -4.5%;
-
+    padding-right: 0px;
     @media (max-width: ${props => props.theme.screen.md}) {
       margin: 0;
     }
@@ -244,7 +244,7 @@ const HeaderTextGroup = styled.div`
   h1 {
     margin: 0 0 24px;
     color: ${props => props.theme.color.primary};
-    
+    padding-right: 0px;
     @media (max-width: ${props => props.theme.screen.md}) {
       font-size: 34px;
     }
@@ -253,11 +253,12 @@ const HeaderTextGroup = styled.div`
   h2 {
     margin-bottom: 24px;
     ${props => props.theme.font_size.regular}
-    padding-right: 10px;
+    padding-right: 0px;
   }
 
   p {
     margin-bottom: 48px;
+    padding-right: 0px;
   }
   @media (max-width: ${props => props.theme.screen.md}) {
   }
